@@ -11,12 +11,12 @@ class App extends Component {
     return (
         <Router>
             <Switch>
-                <Route path="/diff/:timestampA/:timestampB/:site" render={({match}) =>
-                    <DiffContainer site={match.params.site} timestampA={match.params.timestampA}
-                      webMonitoringProcessingURL={this.webMonitoringProcessingURL} limit={'1000'}
-                      webMonitoringProcessingPort={this.webMonitoringProcessingPort}
-                      waybackLoaderPath={'https://users.it.teithe.gr/~it133996/wayback-loader.svg'}
-                      timestampB={match.params.timestampB} fetchCallback = {null} />
+                <Route path="/diff/([^/]*)/([^/]*)/(.+)" render={({match}) =>
+                  <DiffContainer site={match.params[2]} timestampA={match.params[0]}
+                    webMonitoringProcessingURL={this.webMonitoringProcessingURL} limit={'1000'}
+                    webMonitoringProcessingPort={this.webMonitoringProcessingPort}
+                    waybackLoaderPath={'https://users.it.teithe.gr/~it133996/wayback-loader.svg'}
+                    timestampB={match.params[1]} fetchCallback = {null} />
                 }/>
                 <Route path="/diff/:timestampA//:site" render={({match}) =>
                     <DiffContainer site={match.params.site} timestampA={match.params.timestampA}
