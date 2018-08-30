@@ -6,7 +6,7 @@
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-scripts": "1.1.4",
-    "wayback-diff": "file:/home/user/Desktop/gsoc/wayback-diff"
+    "wayback-diff": "file:/home/user/Desktop/gsoc/IA/wayback-diff-1/"
   },
   "scripts": {
     "start": "react-scripts start",
