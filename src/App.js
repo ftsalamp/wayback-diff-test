@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import {DiffContainer} from 'wayback-diff';
+import {DiffContainer, SunburstContainer} from 'wayback-diff';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Loading from "./loading.jsx";
 
@@ -15,7 +15,6 @@ class App extends Component {
         pathname = pathname.split('/');
         let domain = pathname.pop();
         let url = this.conf.snapshotsPrefix + timestamp + '/' + domain;
-        console.log('------------This is working! ' + url);
         return fetch(url);
     }
 
@@ -26,17 +25,17 @@ class App extends Component {
                 <Route path='/diff/([0-9]{14})/([0-9]{14})/(.+)' render={({match}) =>
                     <DiffContainer site={match.params[2]} timestampA={match.params[0]} url={match.url}
                       loader={<Loading waybackLoaderPath={'https://users.it.teithe.gr/~it133996/wayback-loader.svg'} />}
-                      timestampB={match.params[1]} fetchCDXCallback={null} conf={this.conf} fetchSnapshotCallback={this.fetchSnapshot} />
+                      timestampB={match.params[1]} fetchCDXCallback={null} conf={this.conf} fetchSnapshotCallback={null} />
                 } />
                 <Route path='/diff/([0-9]{14})//(.+)' render={({match}) =>
                     <DiffContainer site={match.params[1]} timestampA={match.params[0]} url={match.url}
                       loader={<Loading waybackLoaderPath={'https://users.it.teithe.gr/~it133996/wayback-loader.svg'} />}
-                      fetchCDXCallback={null} conf={this.conf} fetchSnapshotCallback={this.fetchSnapshot}/>
+                      fetchCDXCallback={null} conf={this.conf} fetchSnapshotCallback={null}/>
                 } />
                 <Route path='/diff//([0-9]{14})/(.+)' render={({match}) =>
                     <DiffContainer site={match.params[1]} timestampB={match.params[0]} url={match.url}
                       loader={<Loading waybackLoaderPath={'https://users.it.teithe.gr/~it133996/wayback-loader.svg'} />}
-                      fetchCDXCallback={null} conf={this.conf} fetchSnapshotCallback={this.fetchSnapshot}/>
+                      fetchCDXCallback={null} conf={this.conf} fetchSnapshotCallback={null}/>
                 } />
 
                 <Route path='/diff///(.+)' render={({match}) =>
@@ -47,6 +46,9 @@ class App extends Component {
                     <DiffContainer site={match.params[0]} fetchCDXCallback={null}
                       loader={<Loading waybackLoaderPath={'https://users.it.teithe.gr/~it133996/wayback-loader.svg'} />} conf={this.conf}/>}
                 />
+                <Route path='/diagram/:site/:year/:timestamp' render={({match}) =>
+                <SunburstContainer site={match.params.site} year={match.params.year} wdd={this.conf['wayback-discover-diff']} timestamp={match.params.timestamp}
+                 loader={<Loading waybackLoaderPath={'https://users.it.teithe.gr/~it133996/wayback-loader.svg'} />}/>} />
             </Switch>
         </Router>
     );
