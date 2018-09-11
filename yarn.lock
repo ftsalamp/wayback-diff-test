@@ -9420,7 +9420,7 @@ watchpack@^1.4.0, watchpack@^1.5.0:
     neo-async "^2.5.0"
 
 "wayback-diff@file:../IA/wayback-diff-1":
-  version "0.1.8"
+  version "0.1.9"
   dependencies:
     babel-core "6.26.3"
     babel-plugin-external-helpers "6.18.0"
@@ -9452,7 +9452,7 @@ watchpack@^1.4.0, watchpack@^1.5.0:
     webpack "^4.12.0"
 
 "wayback-diff@file:/home/user/Desktop/gsoc/IA/wayback-diff-1/":
-  version "0.1.8"
+  version "0.1.9"
   dependencies:
     babel-core "6.26.3"
     babel-plugin-external-helpers "6.18.0"

@@ -46,9 +46,9 @@ class App extends Component {
                     <DiffContainer site={match.params[0]} fetchCDXCallback={null}
                       loader={<Loading waybackLoaderPath={'https://users.it.teithe.gr/~it133996/wayback-loader.svg'} />} conf={this.conf}/>}
                 />
-                <Route path='/diagram/:site/:year/:timestamp' render={({match}) =>
-                <SunburstContainer site={match.params.site} year={match.params.year} wdd={this.conf['wayback-discover-diff']} timestamp={match.params.timestamp}
-                 loader={<Loading waybackLoaderPath={'https://users.it.teithe.gr/~it133996/wayback-loader.svg'} />}/>} />
+                <Route path='/diffgraph/([0-9]{14})/(.+)' render={({match}) =>
+                    <SunburstContainer url={match.params[1]} wdd={this.conf['wayback-discover-diff']} timestamp={match.params[0]}
+                      loader={<Loading waybackLoaderPath={'https://users.it.teithe.gr/~it133996/wayback-loader.svg'} />}/>} />
             </Switch>
         </Router>
     );
