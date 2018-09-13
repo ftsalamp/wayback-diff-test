@@ -8306,10 +8306,6 @@ signal-exit@^3.0.0, signal-exit@^3.0.2:
   version "3.0.2"
   resolved "https://registry.yarnpkg.com/signal-exit/-/signal-exit-3.0.2.tgz#b5fdc08f1287ea1178628e415e25132b73646c6d"
 
-simhash-js@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/simhash-js/-/simhash-js-1.0.0.tgz#92176d1cbda19ba0feade56815caa589c905edb9"
-
 simple-swizzle@^0.2.2:
   version "0.2.2"
   resolved "https://registry.yarnpkg.com/simple-swizzle/-/simple-swizzle-0.2.2.tgz#a4da6b635ffcccca33f70d17cb92592de95e557a"
@@ -9446,7 +9442,6 @@ watchpack@^1.4.0, watchpack@^1.5.0:
     rollup-plugin-replace "^2.0.0"
     rollup-plugin-url "^1.4.0"
     rollup-watch "4.3.1"
-    simhash-js "^1.0.0"
     snazzy "6.0.0"
     standard "10.0.3"
     webpack "^4.12.0"
@@ -9478,7 +9473,6 @@ watchpack@^1.4.0, watchpack@^1.5.0:
     rollup-plugin-replace "^2.0.0"
     rollup-plugin-url "^1.4.0"
     rollup-watch "4.3.1"
-    simhash-js "^1.0.0"
     snazzy "6.0.0"
     standard "10.0.3"
     webpack "^4.12.0"
