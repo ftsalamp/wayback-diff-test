@@ -3,6 +3,10 @@ import './App.css';
 import {DiffContainer, SunburstContainer} from 'wayback-diff';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Loading from "./loading.jsx";
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faSpinner } from '@fortawesome/free-solid-svg-icons'
+
+library.add(faSpinner);
 
 class App extends Component {
     conf = require('./conf.json');
